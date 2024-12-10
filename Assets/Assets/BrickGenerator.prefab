@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6264845501156470016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4188166346226328546}
+  - component: {fileID: 4656982228391301904}
+  m_Layer: 0
+  m_Name: BrickGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4188166346226328546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264845501156470016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4656982228391301904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264845501156470016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108262fe855fdd04eadd59233069b96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brick: {fileID: 6200125703154091757, guid: 32be9e88fe598a447b550e360d0d2a92, type: 3}
+  DistanceX: {x: 1.05, y: 0, z: 0}
+  DistanceY: {x: 0, y: 0.5, z: 0}
+  firstRows: {r: 1, g: 0, b: 0, a: 1}
+  middleRows: {r: 0.38389587, g: 0, b: 1, a: 1}
+  lastRows: {r: 1, g: 0.88617504, b: 0, a: 1}
+  limit: 152
