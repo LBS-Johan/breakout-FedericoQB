@@ -51,15 +51,19 @@ public class BrickScript : MonoBehaviour
 
                 // Adds amount of total balls for gameplay
                 BallScript.amountOfBallsTotal++;
+                BrickGeneratorScript.totalBricksLeft--;
 
                 Destroy(gameObject);
             }
             else if (BallScript.amountOfBallsTotal > maximumBalls)
             {
+                BrickGeneratorScript.totalBricksLeft--;
                 minimumPointsToSpawnBalls += 30;
+                Destroy(gameObject);
             }
             else
             {
+                BrickGeneratorScript.totalBricksLeft--;
                 Destroy(gameObject);
             }
         }

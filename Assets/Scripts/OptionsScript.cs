@@ -57,7 +57,7 @@ public class OptionsScript : MonoBehaviour
 
     void CheckAmountOfRows(TMP_InputField number)
     {
-        int conversionNumber = 0;
+        int conversionNumber = 1;
 
         if (int.TryParse(number.text, out int result))
         {

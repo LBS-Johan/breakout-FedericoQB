@@ -45,6 +45,7 @@ public class BallScript : MonoBehaviour
             else
             {
                 transform.position = new Vector2(0, -2);
+                HealthScript.DamageHealth();
 
                 // Lets the player choose when to start
                 hasStarted = false;
@@ -62,6 +63,11 @@ public class BallScript : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, speed);
                 isStuck = false;
                 stuckMessage.SetActive(false);
+            }
+
+            if (BrickGeneratorScript.totalBricksLeft == 0)
+            {
+                transform.position = new Vector3(-1.399139f, -1.889436f, 0);
             }
         }
 
