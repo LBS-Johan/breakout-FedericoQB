@@ -6,7 +6,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public static float speed = 2f;
+    public static float speed = 5f;
     public float debugSpeed = 2f;
     public bool debugging = false;
 

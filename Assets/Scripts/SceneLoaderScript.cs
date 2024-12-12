@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderScript : MonoBehaviour
 {
-    bool isPaused = false;
+    public static bool isPaused = false;
     public GameObject pauseCanvas;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
             PauseMenu();
+        }
+
+        if (isPaused == true && Input.GetKeyDown(KeyCode.T))
+        {
+
         }
     }
     public void LoadMainGame()

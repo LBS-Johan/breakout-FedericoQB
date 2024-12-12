@@ -19,9 +19,9 @@ public class BrickGeneratorScript : MonoBehaviour
     #region BrickColors
 
     // Sets color for corresponding rows
-    public static Color firstRows;
-    public static Color middleRows;
-    public static Color lastRows;
+    public static Color firstRows = Color.red;
+    public static Color middleRows = Color.green;
+    public static Color lastRows = Color.blue;
 
     // Sets color for corresponding rows for debugging
     public Color debugFirstRows;

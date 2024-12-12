@@ -141,11 +141,13 @@ public class OptionsScript : MonoBehaviour
     {
         if (hardcoreMode == true)
         {
-            PlayerMovementScript.speed = 1f;
+            PlayerMovementScript.speed = 3f;
+            BallScript.speed = 10f;
         }
         else
         {
-            PlayerMovementScript.speed = 2f;
+            PlayerMovementScript.speed = 5f;
+            BallScript.speed = 5f;
         }
     }
 }
