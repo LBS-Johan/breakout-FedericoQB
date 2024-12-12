@@ -10,6 +10,7 @@ public class OptionsScript : MonoBehaviour
     public TMP_InputField AmountOfRows;
     public GameObject optionsCanvas;
     public GameObject mainMenuCanvas;
+    public Toggle hardcoreMode;
 
     #region ColorRows
     public GameObject firstRowEmpty;
@@ -21,9 +22,9 @@ public class OptionsScript : MonoBehaviour
     public GameObject lastRowEmpty;
     public GameObject lastColor;
 
-    Vector4 color1;
-    Vector4 color2;
-    Vector4 color3;
+    Vector4 color1 = Color.red;
+    Vector4 color2 = Color.blue;
+    Vector4 color3 = Color.green;
     #endregion
 
     private void Update()
@@ -53,6 +54,7 @@ public class OptionsScript : MonoBehaviour
     {
         CheckAmountOfRows(AmountOfRows);
         ApplyColorChanges(color1, color2, color3);
+        HardCoreMode();
     }
 
     void CheckAmountOfRows(TMP_InputField number)
@@ -133,5 +135,17 @@ public class OptionsScript : MonoBehaviour
         BrickGeneratorScript.firstRows = color1;
         BrickGeneratorScript.middleRows = color2;
         BrickGeneratorScript.lastRows = color3;
+    }
+
+    void HardCoreMode()
+    {
+        if (hardcoreMode == true)
+        {
+            PlayerMovementScript.speed = 1f;
+        }
+        else
+        {
+            PlayerMovementScript.speed = 2f;
+        }
     }
 }

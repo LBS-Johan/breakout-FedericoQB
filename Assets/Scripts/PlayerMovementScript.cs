@@ -6,12 +6,19 @@ public class PlayerMovementScript : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public float speed = 2f;
+    public static float speed = 2f;
+    public float debugSpeed = 2f;
+    public bool debugging = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (debugging == true)
+        {
+            speed = debugSpeed;
+        }
     }
 
     // Update is called once per frame

@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    public static int health;
-    public static TextMeshProUGUI healthBar;
+    public static int health = 3;
+    public static bool inflictDamage = false;
+    public TextMeshProUGUI healthBar;
+    public GameObject gameOverCanvas;
 
-    static string healthIndicator = "I I I";
-    static string secondHealthIndicator = "_ I I";
-    static string lastHealthIndicator = "_ _ I";
+    string healthIndicator = "I---I";
+    string secondHealthIndicator = "I--I";
+    string lastHealthIndicator = "I-I";
+    public string deathText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,18 +25,32 @@ public class HealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (inflictDamage == true)
+        {
+            DamageHealth();
+        }
     }
 
-    public static void DamageHealth()
+    void DamageHealth()
     {
         health--;
         if (health == 2)
         {
+            Debug.Log("2 Lives left");
             healthBar.text = secondHealthIndicator;
         }else if (health == 1)
         {
+            Debug.Log ("1 Life Left");
             healthBar.text = lastHealthIndicator;
         }
+
+        if (health <= 0)
+        {
+            healthBar.text = deathText;
+            gameOverCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        inflictDamage = false;
     }
 }

@@ -22,6 +22,7 @@ public class SceneLoaderScript : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
+        HealthScript.health = 3;
         SceneManager.LoadScene(0);
         BallScript.amountOfBallsTotal = 1;
     }

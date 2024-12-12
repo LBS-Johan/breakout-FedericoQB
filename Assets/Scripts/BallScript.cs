@@ -12,9 +12,11 @@ public class BallScript : MonoBehaviour
     public string pointsText = "Points: ";
     bool hasStarted = false;
     bool isStuck = false;
+    bool debugging = false;
 
     #region NumberVariables
-    public float speed;
+    public static float speed;
+    public float debugSpeed;
     public static int points = 0;
     public static int amountOfBallsTotal = 1;
     float yValueCoordinate;
@@ -27,6 +29,11 @@ public class BallScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed));
         hasStarted = true;
+
+        if (debugging == true)
+        {
+
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +52,8 @@ public class BallScript : MonoBehaviour
             else
             {
                 transform.position = new Vector2(0, -2);
-                HealthScript.DamageHealth();
+                HealthScript.inflictDamage = true;
+                Debug.Log($"Health: {HealthScript.health}");
 
                 // Lets the player choose when to start
                 hasStarted = false;
